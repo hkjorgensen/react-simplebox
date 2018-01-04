@@ -1,0 +1,100 @@
+import React, { Component, Children, cloneElement } from 'react'
+import PropTypes from 'prop-types'
+import isChildrenOfType from './helpers/isChildrenOfType'
+import getConfig from './getConfig'
+import Baseline from './Baseline'
+import Row from './Row'
+import {
+  LTR,
+  RTL,
+  ROW,
+  COL,
+  DEBUG_OUTLINE,
+  DEBUG_BACKGROUND,
+  STYLE_RELATIVE,
+  STYLE_FLEX,
+  STYLE_FLEX_GROW,
+  STYLE_FLEX_ROW,
+  STYLE_FLEX_COLUMN,
+} from './constants'
+
+class Grid extends Component {
+  getClassName() {
+    const { children } = this.props
+    const classNames = [STYLE_RELATIVE, STYLE_FLEX, STYLE_FLEX_GROW]
+
+    classNames.push(
+      isChildrenOfType(Row, children) ? STYLE_FLEX_COLUMN : STYLE_FLEX_ROW,
+    )
+
+    return classNames.join(' ')
+  }
+
+  getChildrenWithProps() {
+    const {
+      children,
+      dir,
+      debug,
+      debugType,
+      gap,
+      forceGridSize,
+      gridSize,
+    } = this.props
+    const base = {
+      dir,
+      debug,
+      debugType,
+      gap,
+      forceGridSize,
+      gridSize,
+      justify: null,
+      flow: isChildrenOfType(Row, children) ? ROW : COL,
+    }
+
+    const firstConfig = getConfig({ ...base, isFirst: true })
+    const nextConfig = getConfig({ ...base, isFirst: false })
+
+    return Children.map(children, (child, index) => {
+      return cloneElement(child, {
+        config: index === 0 ? firstConfig : nextConfig,
+      })
+    })
+  }
+
+  render() {
+    const { gridHelper, dir, gridSize } = this.props
+
+    return (
+      <Baseline
+        dir={dir}
+        className={this.getClassName()}
+        type={gridHelper}
+        size={gridSize}
+      >
+        {this.getChildrenWithProps()}
+      </Baseline>
+    )
+  }
+}
+
+Grid.propTypes = {
+  gridSize: PropTypes.number,
+  gridHelper: PropTypes.oneOf(['baseline', 'baseline2', 'modular', 'modular2']),
+  forceGridSize: PropTypes.bool,
+  dir: PropTypes.oneOf([LTR, RTL]),
+  debug: PropTypes.bool,
+  debugType: PropTypes.oneOf([DEBUG_OUTLINE, DEBUG_BACKGROUND]),
+  gap: PropTypes.number,
+}
+
+Grid.defaultProps = {
+  gridSize: 8,
+  gridHelper: null,
+  forceGridSize: false,
+  dir: LTR,
+  debug: false,
+  debugType: 'background',
+  gap: null,
+}
+
+export default Grid

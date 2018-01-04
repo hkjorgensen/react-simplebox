@@ -1,0 +1,76 @@
+.SB-relative {
+  position: relative;
+}
+
+.SB-flex-grow {
+  flex-basis: 0;
+  flex-shrink: 0;
+  flex-grow: 1;
+}
+
+.SB-flex-auto {
+  flex-basis: auto;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.SB-flex-fixed {
+  flex-basis: 0;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.SB-flex {
+  display: flex;
+}
+
+.SB-flex-row {
+  flex-direction: row;
+}
+
+.SB-flex-column {
+  flex-direction: column;
+}
+
+.SB-flex-justify-between {
+  justify-content: space-between;
+}
+
+.SB-flex-justify-start {
+  justify-content: flex-start;
+}
+
+.SB-flex-justify-center {
+  justify-content: center;
+}
+
+.SB-flex-justify-end {
+  justify-content: flex-end;
+}
+
+.SB-flex-align-center {
+  align-items: center;
+}
+
+.SB-flex-space-between {
+  justify-content: space-between;
+}
+
+.SB-scroll {
+  -webkit-overflow-scrolling: touch;
+}
+
+.SB-scroll-vertical {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.SB-scroll-horizontal {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.SB-scroll-both {
+  overflow-x: auto;
+  overflow-y: auto;
+}

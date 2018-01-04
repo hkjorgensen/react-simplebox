@@ -1,0 +1,60 @@
+{
+  "name": "react-simplebox",
+  "version": "0.0.1",
+  "description": "Simple layout components for applications built with React",
+  "main": "build/index.js",
+  "author": "Henrik Jørgensen <henrikj@me.com>",
+  "user": "hkjorgensen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hkjorgensen/react-simplebox/issues"
+  },
+  "homepage": "https://github.com/hkjorgensen/react-simplebox#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hkjorgensen/react-simplebox.git"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "react-component",
+    "flex",
+    "flexbox",
+    "layout",
+    "grid",
+    "baseline",
+    "vertical",
+    "rhythm",
+    "scrolling"
+  ],
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "start": "webpack --watch --config config/webpack.config.js",
+    "build": "webpack --config config/webpack.config.js",
+    "prettier": "prettier --write '{src,test,config}/**/*.js'",
+    "prettier:test": "prettier --list-different '{src,test,config}/**/*.js' || { echo ^ These files need to be prettier: npm run prettier; exit 1; }",
+    "test": "npm run prettier:test",
+    "preversion": "npm test",
+    "version": "echo do version",
+    "postversion": "echo publish to npm"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "prop-types": "^15.6.0"
+  },
+  "peerDependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "prettier": "^1.9.2",
+    "webpack": "^3.10.0"
+  }
+}
