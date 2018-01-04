@@ -32,7 +32,9 @@
   ],
   "scripts": {
     "start": "webpack --watch --config config/webpack.config.js",
-    "build": "webpack --config config/webpack.config.js",
+    "build": "npm run build:js && npm run build:css",
+    "build:js": "webpack --config config/webpack.config.js",
+    "build:css": "cp src/style.css build/style.css",
     "prettier": "prettier --write '{src,test,config}/**/*.js'",
     "prettier:test": "prettier --list-different '{src,test,config}/**/*.js' || { echo ^ These files need to be prettier: npm run prettier; exit 1; }",
     "test": "npm run prettier:test",
