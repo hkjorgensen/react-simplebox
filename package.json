@@ -32,7 +32,8 @@
   ],
   "scripts": {
     "start": "webpack --watch --config config/webpack.config.js",
-    "build": "npm run build:js && npm run build:css",
+    "build": "npm run build:clean && npm run build:js && npm run build:css",
+    "build:clean": "rm -rf build; mkdir build",
     "build:js": "webpack --config config/webpack.config.js",
     "build:css": "cp src/styles.css build/styles.css",
     "prettier": "prettier --write '{src,test,config}/**/*.js'",
