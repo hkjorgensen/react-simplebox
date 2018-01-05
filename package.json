@@ -38,7 +38,7 @@
     "prettier": "prettier --write '{src,test,config}/**/*.js'",
     "prettier:test": "prettier --list-different '{src,test,config}/**/*.js' || { echo ^ These files need to be prettier: npm run prettier; exit 1; }",
     "test": "npm run prettier:test",
-    "release": "np"
+    "release": "npm run build && np --no-publish"
   },
   "dependencies": {
     "lodash": "^4.17.4",
