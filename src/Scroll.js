@@ -9,6 +9,7 @@ import {
   STYLE_SCROLL_HORIZONTAL,
   VERTICAL,
   STYLE_SCROLL_VERTICAL,
+  STYLE_FLEX_COLUMN,
   BOTH,
   STYLE_SCROLL_BOTH,
 } from './constants'
@@ -16,7 +17,12 @@ import {
 class Scroll extends Component {
   getClassName() {
     const { direction } = this.props
-    const classNames = [STYLE_SCROLL, STYLE_FLEX, STYLE_FLEX_GROW]
+    const classNames = [
+      STYLE_SCROLL,
+      STYLE_FLEX,
+      STYLE_FLEX_GROW,
+      STYLE_FLEX_COLUMN,
+    ]
 
     if (direction === HORIZONTAL) {
       classNames.push(STYLE_SCROLL_HORIZONTAL)
