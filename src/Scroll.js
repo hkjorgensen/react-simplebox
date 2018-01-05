@@ -16,7 +16,7 @@ import {
 
 class Scroll extends Component {
   getClassName() {
-    const { direction } = this.props
+    const { direction, className } = this.props
     const classNames = [
       STYLE_SCROLL,
       STYLE_FLEX,
@@ -34,6 +34,10 @@ class Scroll extends Component {
 
     if (direction === BOTH) {
       classNames.push(STYLE_SCROLL_BOTH)
+    }
+
+    if (className && className !== '') {
+      classNames.push(className)
     }
 
     return classNames.join(' ')
@@ -54,12 +58,14 @@ Scroll.propTypes = {
   children: PropTypes.node,
   direction: PropTypes.oneOf([HORIZONTAL, VERTICAL, BOTH]),
   onScroll: PropTypes.func,
+  className: PropTypes.string,
 }
 
 Scroll.defaultProps = {
   onScroll: null,
   children: null,
   direction: VERTICAL,
+  className: null,
 }
 
 export default Scroll

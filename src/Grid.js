@@ -20,12 +20,16 @@ import {
 
 class Grid extends Component {
   getClassName() {
-    const { children } = this.props
+    const { children, className } = this.props
     const classNames = [STYLE_RELATIVE, STYLE_FLEX, STYLE_FLEX_GROW]
 
     classNames.push(
       isChildrenOfType(Row, children) ? STYLE_FLEX_COLUMN : STYLE_FLEX_ROW,
     )
+
+    if (className && className !== '') {
+      classNames.push(className)
+    }
 
     return classNames.join(' ')
   }
@@ -85,6 +89,7 @@ Grid.propTypes = {
   debug: PropTypes.bool,
   debugType: PropTypes.oneOf([DEBUG_OUTLINE, DEBUG_BACKGROUND]),
   gap: PropTypes.number,
+  className: PropTypes.string,
 }
 
 Grid.defaultProps = {
@@ -95,6 +100,7 @@ Grid.defaultProps = {
   debug: false,
   debugType: 'background',
   gap: null,
+  className: null,
 }
 
 export default Grid

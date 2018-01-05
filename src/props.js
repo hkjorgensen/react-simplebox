@@ -12,6 +12,7 @@ export const defaultProps = {
   paddingEnd: null,
   paddingTop: null,
   paddingBottom: null,
+  className: null,
 }
 
 export const propTypes = {
@@ -25,4 +26,5 @@ export const propTypes = {
   paddingEnd: PropTypes.number,
   paddingTop: PropTypes.number,
   paddingBottom: PropTypes.number,
+  className: PropTypes.string,
 }

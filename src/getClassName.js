@@ -18,6 +18,7 @@ import {
 } from './constants'
 
 const getClassName = ({
+  className,
   children,
   size,
   type,
@@ -61,6 +62,10 @@ const getClassName = ({
 
   if (align === CENTER) {
     classNames.push(STYLE_FLEX_ALIGN_CENTER)
+  }
+
+  if (className && className !== '') {
+    classNames.push(className)
   }
 
   return classNames.join(' ')
