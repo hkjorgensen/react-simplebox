@@ -4,6 +4,9 @@ import {
   START,
   CENTER,
   END,
+  BOTH,
+  VERTICAL,
+  HORIZONTAL,
   STYLE_RELATIVE,
   STYLE_FLEX,
   STYLE_FLEX_AUTO,
@@ -15,6 +18,10 @@ import {
   STYLE_FLEX_JUSTIFY_CENTER,
   STYLE_FLEX_JUSTIFY_END,
   STYLE_FLEX_ALIGN_CENTER,
+  STYLE_SCROLL,
+  STYLE_SCROLL_BOTH,
+  STYLE_SCROLL_VERTICAL,
+  STYLE_SCROLL_HORIZONTAL,
 } from './constants'
 
 const getClassName = ({
@@ -27,6 +34,7 @@ const getClassName = ({
   relative,
   align,
   config,
+  scroll,
 }) => {
   const classNames = [STYLE_FLEX]
 
@@ -62,6 +70,22 @@ const getClassName = ({
 
   if (align === CENTER) {
     classNames.push(STYLE_FLEX_ALIGN_CENTER)
+  }
+
+  if (scroll !== null) {
+    classNames.push(STYLE_SCROLL)
+
+    if (scroll === BOTH) {
+      classNames.push(STYLE_SCROLL_BOTH)
+    }
+
+    if (scroll === VERTICAL) {
+      classNames.push(STYLE_SCROLL_VERTICAL)
+    }
+
+    if (scroll === HORIZONTAL) {
+      classNames.push(STYLE_SCROLL_HORIZONTAL)
+    }
   }
 
   if (className && className !== '') {

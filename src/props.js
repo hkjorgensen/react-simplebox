@@ -1,5 +1,13 @@
 import PropTypes from 'prop-types'
-import { SPACE_BETWEEN, START, CENTER, END } from './constants'
+import {
+  SPACE_BETWEEN,
+  START,
+  CENTER,
+  END,
+  BOTH,
+  VERTICAL,
+  HORIZONTAL,
+} from './constants'
 
 export const defaultProps = {
   size: 0,
@@ -13,6 +21,8 @@ export const defaultProps = {
   paddingTop: null,
   paddingBottom: null,
   className: null,
+  scroll: null,
+  onScroll: null,
 }
 
 export const propTypes = {
@@ -27,4 +37,6 @@ export const propTypes = {
   paddingTop: PropTypes.number,
   paddingBottom: PropTypes.number,
   className: PropTypes.string,
+  scroll: PropTypes.oneOf([BOTH, VERTICAL, HORIZONTAL]),
+  onScroll: PropTypes.func,
 }

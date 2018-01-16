@@ -20,7 +20,7 @@ import 'react-simplebox/build/styles.css'
 class App extends Component {
   render() {
     return (
-      <div style={{ display: flex; height: 500, width: 500 }}>
+      <div style={{ display: 'flex', height: 500, width: 500 }}>
         <Grid>
           <Row>First</Row>
           <Row>
@@ -62,8 +62,6 @@ react-simplebox depends on [react](https://www.npmjs.com/package/react) and [rea
 - `paddingEnd` (number) default: `null`
 - `paddingTop` (number) default: `null`
 - `paddingBottom` (number) default: `null`
-- `config` (object) default: `{}` - *WARNING: INTERNAL, automatic provided by the parent.*
-
-### `Scroll`
-- `direction` (string) default: `vertical` - define scrolling behaviour with one of: "vertical", "horizontal" or "both"
+- `scroll` (string) default: `vertical` - define scrolling behaviour with one of: "vertical", "horizontal" or "both"
 - `onScroll` (func) default: `null` - callback used when scrolling position changes.
+- `config` (object) default: `{}` - *WARNING: INTERNAL, automatic provided by the parent.*
