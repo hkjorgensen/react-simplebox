@@ -20,6 +20,7 @@ class Row extends Component {
       <div
         style={getStyle({ ...this.props, debugColor, gapStyleProperty, type })}
         className={getClassName({ ...this.props, type: Row })}
+        onScroll={this.props.onScroll}
       >
         {getDecoratedChildren({ ...this.props, type })}
       </div>
