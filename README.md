@@ -53,7 +53,7 @@ react-simplebox depends on [react](https://www.npmjs.com/package/react) and [rea
 - `gridHelper` (string) default: `null` - toggle background grid with one of: "baseline", "baseline2", "modular", "modular2"
 
 ### `Row` & `Col`
-- `size` (number|string) default: `0` - define the size of element use a number or `auto`.
+- `size` (number|string) default: `0` - define the size of element use a number or string `fit`.
 - `gap` (number) default: `null` - define the gap between children.
 - `justify` (string) default: `null` - define how to justify children with one of "start", "center", "end" or "space-between".
 - `align` (string) default: `null` - define how to children according to the Y-axis. Allowed value is "center".

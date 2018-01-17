@@ -5,6 +5,7 @@ import {
   CENTER,
   END,
   BOTH,
+  FIT,
   VERTICAL,
   HORIZONTAL,
 } from './constants'
@@ -26,7 +27,7 @@ export const defaultProps = {
 }
 
 export const propTypes = {
-  size: PropTypes.oneOfType([PropTypes.oneOf(['auto']), PropTypes.number]),
+  size: PropTypes.oneOfType([PropTypes.oneOf([FIT]), PropTypes.number]),
   gap: PropTypes.number,
   config: PropTypes.object,
   justify: PropTypes.oneOf([SPACE_BETWEEN, START, CENTER, END]),

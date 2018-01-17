@@ -2,7 +2,7 @@ import bidi from './helpers/bidi'
 import {
   COL,
   ROW,
-  AUTO,
+  FIT,
   DEBUG_OUTLINE,
   DEBUG_BACKGROUND,
   SPACE_BETWEEN,
@@ -39,7 +39,7 @@ const getStyle = ({
   }
 
   if (size) {
-    let value = size === AUTO ? AUTO : size * gridMultiplier
+    let value = size === FIT ? 'auto' : size * gridMultiplier
 
     if (flow === ROW && type === ROW) {
       style.height = value
