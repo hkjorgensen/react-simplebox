@@ -17,6 +17,7 @@ export const DEBUG_BACKGROUND = 'background'
 export const STYLE_RELATIVE = `${STYLE_PREFIX}-relative`
 export const STYLE_FLEX = `${STYLE_PREFIX}-flex`
 export const STYLE_FLEX_GROW = `${STYLE_PREFIX}-flex-grow`
+export const STYLE_FLEX_GROW_SCROLL = `${STYLE_PREFIX}-flex-grow-scroll`
 export const STYLE_FLEX_AUTO = `${STYLE_PREFIX}-flex-auto`
 export const STYLE_FLEX_FIXED = `${STYLE_PREFIX}-flex-fixed`
 export const STYLE_FLEX_COLUMN = `${STYLE_PREFIX}-flex-column`

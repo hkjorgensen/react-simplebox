@@ -22,6 +22,14 @@
   flex-grow: 0;
 }
 
+.SB-flex-grow-scroll {
+  flex-basis: auto;
+  flex-shrink: 1;
+  flex-grow: 1;
+  min-width: 0px;
+  min-height: 0px;
+}
+
 .SB-flex {
   display: flex;
 }

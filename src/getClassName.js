@@ -12,6 +12,7 @@ import {
   STYLE_FLEX,
   STYLE_FLEX_AUTO,
   STYLE_FLEX_GROW,
+  STYLE_FLEX_GROW_SCROLL,
   STYLE_FLEX_COLUMN,
   STYLE_FLEX_ROW,
   STYLE_FLEX_JUSTIFY_BETWEEN,
@@ -42,7 +43,11 @@ const getClassName = ({
   if (size || config.justify !== null || config.isParentScroll) {
     classNames.push(STYLE_FLEX_AUTO)
   } else {
-    classNames.push(STYLE_FLEX_GROW)
+    if (scroll) {
+      classNames.push(STYLE_FLEX_GROW_SCROLL)
+    } else {
+      classNames.push(STYLE_FLEX_GROW)
+    }
   }
 
   if (relative) {
