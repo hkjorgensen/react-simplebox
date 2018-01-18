@@ -1,35 +1,37 @@
 import { Children, isValidElement, cloneElement } from 'react'
 import getConfig from './getConfig'
-import Row from './Row'
-import Col from './Col'
 
-const getDecoratedChildren = ({ children, gap, config, type, justify }) => {
+const getDecoratedChildren = ({
+  children,
+  gap,
+  config,
+  typeOfSelf,
+  scroll,
+  justify,
+  isLeaf,
+}) => {
   const firstConfig = getConfig({
     ...config,
     gap,
     justify,
-    flow: type,
+    isParentScroll: scroll,
+    flow: typeOfSelf,
     isFirst: true,
   })
+
   const nextConfig = getConfig({
-    ...config,
-    gap,
-    justify,
-    flow: type,
+    ...firstConfig,
     isFirst: false,
   })
 
   return Children.map(children, (child, index) => {
-    if (!isValidElement(child)) {
+    if (isLeaf || !isValidElement(child)) {
       return child
     }
-    if (child.type === Row || child.type === Col) {
-      return cloneElement(child, {
-        config: index === 0 ? firstConfig : nextConfig,
-      })
-    }
 
-    return child
+    return cloneElement(child, {
+      config: index === 0 ? firstConfig : nextConfig,
+    })
   })
 }
 

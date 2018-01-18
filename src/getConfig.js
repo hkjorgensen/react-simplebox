@@ -24,8 +24,9 @@ const getConfig = ({
   justify,
   forceGridSize,
   gridSize,
+  isParentScroll,
 } = defaults) => {
-  const key = `${dir}-${debug}-${debugType}-${isFirst}-${flow}-${gap}-${justify}-${forceGridSize}-${gridSize}`
+  const key = `${dir}-${debug}-${debugType}-${isFirst}-${flow}-${gap}-${justify}-${forceGridSize}-${gridSize}-${isParentScroll}`
   if (!cache.has(key)) {
     cache.set(
       key,
@@ -39,6 +40,7 @@ const getConfig = ({
         justify,
         forceGridSize,
         gridSize,
+        isParentScroll,
       }),
     )
   }

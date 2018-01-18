@@ -1,4 +1,3 @@
-import isChildrenOfType from './helpers/isChildrenOfType'
 import {
   SPACE_BETWEEN,
   START,
@@ -7,6 +6,8 @@ import {
   BOTH,
   VERTICAL,
   HORIZONTAL,
+  ROW,
+  COL,
   STYLE_RELATIVE,
   STYLE_FLEX,
   STYLE_FLEX_AUTO,
@@ -25,9 +26,8 @@ import {
 } from './constants'
 
 const getClassName = ({
-  children,
+  isChildrenCol,
   size,
-  type,
   gap,
   justify,
   relative,
@@ -37,11 +37,9 @@ const getClassName = ({
 }) => {
   const classNames = [STYLE_FLEX]
 
-  classNames.push(
-    isChildrenOfType(type, children) ? STYLE_FLEX_ROW : STYLE_FLEX_COLUMN,
-  )
+  classNames.push(isChildrenCol ? STYLE_FLEX_ROW : STYLE_FLEX_COLUMN)
 
-  if (size || config.justify !== null) {
+  if (size || config.justify !== null || config.isParentScroll) {
     classNames.push(STYLE_FLEX_AUTO)
   } else {
     classNames.push(STYLE_FLEX_GROW)

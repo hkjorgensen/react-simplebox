@@ -19,7 +19,7 @@ const getStyle = ({
   paddingTop,
   paddingBottom,
   backgroundColor,
-  type,
+  typeOfSelf,
 }) => {
   const { gap, isFirst, dir, flow, gridSize, forceGridSize } = config
   const gridMultiplier = forceGridSize ? gridSize : 1
@@ -46,19 +46,19 @@ const getStyle = ({
   if (size) {
     let value = size === FIT ? 'auto' : size * gridMultiplier
 
-    if (flow === ROW && type === ROW) {
+    if (flow === ROW && typeOfSelf === ROW) {
       style.height = value
     }
 
-    if (flow === ROW && type === COL) {
+    if (flow === ROW && typeOfSelf === COL) {
       style.width = value
     }
 
-    if (flow === COL && type == ROW) {
+    if (flow === COL && typeOfSelf == ROW) {
       style.height = value
     }
 
-    if (flow === COL && type === COL) {
+    if (flow === COL && typeOfSelf === COL) {
       size.width = value
     }
   }
