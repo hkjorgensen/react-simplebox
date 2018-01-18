@@ -18,11 +18,16 @@ const getStyle = ({
   paddingEnd,
   paddingTop,
   paddingBottom,
+  backgroundColor,
   type,
 }) => {
   const { gap, isFirst, dir, flow, gridSize, forceGridSize } = config
   const gridMultiplier = forceGridSize ? gridSize : 1
   const style = {}
+
+  if (backgroundColor) {
+    style.backgroundColor = backgroundColor
+  }
 
   if (config.debug) {
     if (config.debugType === DEBUG_OUTLINE) {
@@ -30,7 +35,7 @@ const getStyle = ({
     }
 
     if (config.debugType === DEBUG_BACKGROUND) {
-      style.background = debugColor
+      style.backgroundColor = debugColor
     }
   }
 

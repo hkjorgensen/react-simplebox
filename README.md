@@ -62,6 +62,7 @@ react-simplebox depends on [react](https://www.npmjs.com/package/react) and [rea
 - `paddingEnd` (number) default: `null`
 - `paddingTop` (number) default: `null`
 - `paddingBottom` (number) default: `null`
+- `backgroundColor` (string) default: `null`
 - `scroll` (string) default: `vertical` - define scrolling behaviour with one of: "vertical", "horizontal" or "both"
 - `onScroll` (func) default: `null` - callback used when scrolling position changes.
 - `config` (object) default: `{}` - *WARNING: INTERNAL, automatic provided by the parent.*
