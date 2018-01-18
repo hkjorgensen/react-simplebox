@@ -1,5 +1,7 @@
 import { Children, isValidElement, cloneElement } from 'react'
 import getConfig from './getConfig'
+import Row from './Row'
+import Col from './Col'
 
 const getDecoratedChildren = ({ children, gap, config, type, justify }) => {
   const firstConfig = getConfig({
@@ -18,9 +20,12 @@ const getDecoratedChildren = ({ children, gap, config, type, justify }) => {
   })
 
   return Children.map(children, (child, index) => {
-    return isValidElement(child)
-      ? cloneElement(child, { config: index === 0 ? firstConfig : nextConfig })
-      : child
+    if (!isValidElement(child)) { return child }
+    if (child.type === Row || child.type === Col) {
+      return cloneElement(child, { config: index === 0 ? firstConfig : nextConfig })
+    }
+
+    return child
   })
 }
 
