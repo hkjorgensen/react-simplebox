@@ -25,7 +25,6 @@ import {
 } from './constants'
 
 const getClassName = ({
-  className,
   children,
   size,
   type,
@@ -86,10 +85,6 @@ const getClassName = ({
     if (scroll === HORIZONTAL) {
       classNames.push(STYLE_SCROLL_HORIZONTAL)
     }
-  }
-
-  if (className && className !== '') {
-    classNames.push(className)
   }
 
   return classNames.join(' ')

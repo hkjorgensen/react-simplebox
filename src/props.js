@@ -22,7 +22,6 @@ export const defaultProps = {
   paddingTop: null,
   paddingBottom: null,
   backgroundColor: null,
-  className: null,
   scroll: null,
   onScroll: null,
 }
@@ -39,7 +38,6 @@ export const propTypes = {
   paddingTop: PropTypes.number,
   paddingBottom: PropTypes.number,
   backgroundColor: PropTypes.string,
-  className: PropTypes.string,
   scroll: PropTypes.oneOf([BOTH, VERTICAL, HORIZONTAL]),
   onScroll: PropTypes.func,
 }
