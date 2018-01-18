@@ -4,7 +4,6 @@ import getStyle from './getStyle'
 import getClassName from './getClassName'
 import getDecoratedChildren from './getDecoratedChildren'
 import { propTypes, defaultProps } from './props'
-import Row from './Row'
 import { COL } from './constants'
 
 class Col extends Component {
@@ -20,7 +19,7 @@ class Col extends Component {
     return (
       <div
         style={getStyle({ ...this.props, debugColor, gapStyleProperty, type })}
-        className={getClassName({ ...this.props, type: Row })}
+        className={getClassName({ ...this.props, type: Col })}
         onScroll={this.props.onScroll}
       >
         {getDecoratedChildren({ ...this.props, type })}

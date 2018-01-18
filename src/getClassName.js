@@ -39,7 +39,7 @@ const getClassName = ({
   const classNames = [STYLE_FLEX]
 
   classNames.push(
-    isChildrenOfType(type, children) ? STYLE_FLEX_COLUMN : STYLE_FLEX_ROW,
+    isChildrenOfType(type, children) ? STYLE_FLEX_ROW : STYLE_FLEX_COLUMN,
   )
 
   if (size || config.justify !== null) {
