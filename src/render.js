@@ -2,7 +2,6 @@ import React from 'react'
 import getStyle from './getStyle'
 import getClassName from './getClassName'
 import getDecoratedChildren from './getDecoratedChildren'
-import Leaf from './Leaf'
 
 const render = ({
   props,
