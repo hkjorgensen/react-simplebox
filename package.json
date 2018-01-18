@@ -1,6 +1,6 @@
 {
   "name": "react-simplebox",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Simple layout components for applications built with React",
   "main": "build/index.js",
   "author": "Henrik Jørgensen <henrikj@me.com>",
