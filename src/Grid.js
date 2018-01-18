@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import isChildrenOfType from './helpers/isChildrenOfType'
 import getConfig from './getConfig'
 import Baseline from './Baseline'
-import Row from './Row'
+import { Row } from './RowAndCol'
 import {
   LTR,
   RTL,
