@@ -18,14 +18,6 @@ const render = ({
   const children = getDecoratedChildren({ ...props, typeOfSelf, isLeaf })
   const onScroll = props.onScroll
 
-  if (isLeaf) {
-    return (
-      <div style={style} className={className} onScroll={onScroll}>
-        <Leaf>{children}</Leaf>
-      </div>
-    )
-  }
-
   return (
     <div style={style} className={className} onScroll={onScroll}>
       {children}
