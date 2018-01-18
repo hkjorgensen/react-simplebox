@@ -20,9 +20,13 @@ const getDecoratedChildren = ({ children, gap, config, type, justify }) => {
   })
 
   return Children.map(children, (child, index) => {
-    if (!isValidElement(child)) { return child }
+    if (!isValidElement(child)) {
+      return child
+    }
     if (child.type === Row || child.type === Col) {
-      return cloneElement(child, { config: index === 0 ? firstConfig : nextConfig })
+      return cloneElement(child, {
+        config: index === 0 ? firstConfig : nextConfig,
+      })
     }
 
     return child
