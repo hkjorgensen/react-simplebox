@@ -2,7 +2,8 @@ const OFF = 0;
 const ERROR = 2;
 
 module.exports = {
-  extends: 'eslint:recommended',
+  extends: ['eslint:recommended'],
+  plugins: ['react'],
   env: {
     browser: true,
     node: true,
@@ -17,6 +18,7 @@ module.exports = {
     }
   },
   rules: {
-
+    "react/jsx-uses-react": ERROR,
+    "react/jsx-uses-vars": ERROR
   }
 }
