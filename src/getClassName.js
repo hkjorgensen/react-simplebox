@@ -6,8 +6,6 @@ import {
   BOTH,
   VERTICAL,
   HORIZONTAL,
-  ROW,
-  COL,
   STYLE_RELATIVE,
   STYLE_FLEX,
   STYLE_FLEX_AUTO,
@@ -29,7 +27,6 @@ import {
 const getClassName = ({
   isChildrenCol,
   size,
-  gap,
   justify,
   relative,
   align,

@@ -41,7 +41,7 @@ const getConfig = ({
         forceGridSize,
         gridSize,
         isParentScroll,
-      }),
+      })
     )
   }
 

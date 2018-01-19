@@ -24,7 +24,7 @@ class Grid extends Component {
     const classNames = [STYLE_RELATIVE, STYLE_FLEX, STYLE_FLEX_GROW]
 
     classNames.push(
-      isChildrenOfType(Row, children) ? STYLE_FLEX_COLUMN : STYLE_FLEX_ROW,
+      isChildrenOfType(Row, children) ? STYLE_FLEX_COLUMN : STYLE_FLEX_ROW
     )
 
     if (className && className !== '') {

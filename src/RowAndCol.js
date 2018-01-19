@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import getDebugColor from './getDebugColor'
 import { propTypes, defaultProps } from './props'
 import isChildrenOfType from './helpers/isChildrenOfType'

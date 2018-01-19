@@ -18,7 +18,7 @@ const CONVERTIONS = {
 const bidi = (style = {}, dir = LTR) => {
   if (dir !== LTR && dir !== RTL) {
     throw new Error(
-      `bidi argument 'dir' can only be '${LTR}' or '${RTL}'. Received: ${dir}`,
+      `bidi argument 'dir' can only be '${LTR}' or '${RTL}'. Received: ${dir}`
     )
   }
 
