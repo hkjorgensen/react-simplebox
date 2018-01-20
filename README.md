@@ -14,7 +14,7 @@ yarn add react-simplebox
 ## Usage
 ```js
 import React, { Component } from 'react'
-import { Grid, Row, Col, Scroll } from 'react-simplebox'
+import { Grid, Row, Col } from 'react-simplebox'
 import 'react-simplebox/build/styles.css'
 
 class App extends Component {
