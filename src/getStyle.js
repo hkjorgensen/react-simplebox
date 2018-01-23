@@ -1,4 +1,5 @@
 import bidi from './helpers/bidi'
+import getBoxStyle from './getBoxStyle'
 import {
   COL,
   ROW,
@@ -18,16 +19,12 @@ const getStyle = ({
   paddingEnd,
   paddingTop,
   paddingBottom,
-  backgroundColor,
   typeOfSelf,
+  boxStyle,
 }) => {
   const { gap, isFirst, dir, flow, gridSize, forceGridSize } = config
   const gridMultiplier = forceGridSize ? gridSize : 1
-  const style = {}
-
-  if (backgroundColor) {
-    style.backgroundColor = backgroundColor
-  }
+  const style = !config.debug && boxStyle ? getBoxStyle(boxStyle) : {}
 
   if (config.debug) {
     if (config.debugType === DEBUG_OUTLINE) {

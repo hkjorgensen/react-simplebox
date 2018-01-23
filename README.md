@@ -62,7 +62,7 @@ react-simplebox depends on [react](https://www.npmjs.com/package/react) and [rea
 - `paddingEnd` (number) default: `null`
 - `paddingTop` (number) default: `null`
 - `paddingBottom` (number) default: `null`
-- `backgroundColor` (string) default: `null`
 - `scroll` (string) default: `vertical` - define scrolling behaviour with one of: "vertical", "horizontal" or "both"
 - `onScroll` (func) default: `null` - callback used when scrolling position changes.
+- `boxStyle` (object) default: `null` - a whitelist of styles that can change the box ui, but not the layout. [See the full list here](https://github.com/hkjorgensen/react-simplebox/blob/master/src/props.js).
 - `config` (object) default: `{}` - *WARNING: INTERNAL, automatic provided by the parent.*
