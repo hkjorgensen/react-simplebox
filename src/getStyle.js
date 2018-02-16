@@ -56,7 +56,7 @@ const getStyle = ({
     }
 
     if (flow === COL && typeOfSelf === COL) {
-      size.width = value
+      style.width = value
     }
   }
 
