@@ -20,7 +20,7 @@ import 'react-simplebox/build/styles.css'
 class App extends Component {
   render() {
     return (
-      <div style={{ display: 'flex', height: 500, width: 500 }}>
+      <div style={{ minHeight: '100vh', display: 'flex' }}>
         <Grid>
           <Row>First</Row>
           <Row>
