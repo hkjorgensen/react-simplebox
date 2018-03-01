@@ -2,8 +2,8 @@ const OFF = 0;
 const ERROR = 2;
 
 module.exports = {
+  plugins: ['react', 'jest'],
   extends: ['eslint:recommended'],
-  plugins: ['react'],
   env: {
     browser: true,
     node: true,
