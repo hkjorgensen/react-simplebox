@@ -10,6 +10,9 @@ const defaults = {
   justify: null,
   forceGridSize: null,
   gridSize: null,
+  isParentScroll: false,
+  isParentRowAndFit: false,
+  isParentColAndFit: false,
 }
 
 const cache = new Map()
@@ -25,8 +28,10 @@ const getConfig = ({
   forceGridSize,
   gridSize,
   isParentScroll,
+  isParentRowAndFit,
+  isParentColAndFit,
 } = defaults) => {
-  const key = `${dir}-${debug}-${debugType}-${isFirst}-${flow}-${gap}-${justify}-${forceGridSize}-${gridSize}-${isParentScroll}`
+  const key = `${dir}-${debug}-${debugType}-${isFirst}-${flow}-${gap}-${justify}-${forceGridSize}-${gridSize}-${isParentScroll}-${isParentRowAndFit}-${isParentColAndFit}`
   if (!cache.has(key)) {
     cache.set(
       key,
@@ -41,6 +46,8 @@ const getConfig = ({
         forceGridSize,
         gridSize,
         isParentScroll,
+        isParentRowAndFit,
+        isParentColAndFit,
       })
     )
   }

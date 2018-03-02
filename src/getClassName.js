@@ -1,4 +1,6 @@
 import {
+  ROW,
+  COL,
   SPACE_BETWEEN,
   START,
   CENTER,
@@ -32,12 +34,19 @@ const getClassName = ({
   align,
   config,
   scroll,
+  typeOfSelf,
 }) => {
   const classNames = [STYLE_FLEX]
 
   classNames.push(isChildrenCol ? STYLE_FLEX_ROW : STYLE_FLEX_COLUMN)
 
-  if (size || config.justify !== null || config.isParentScroll) {
+  if (
+    size ||
+    config.justify !== null ||
+    config.isParentScroll ||
+    (typeOfSelf === ROW && config.isParentRowAndFit) ||
+    (typeOfSelf === COL && config.isParentColAndFit)
+  ) {
     classNames.push(STYLE_FLEX_AUTO)
   } else {
     if (scroll) {

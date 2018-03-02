@@ -13,7 +13,12 @@ const render = ({
   isLeaf,
 }) => {
   const style = getStyle({ ...props, debugColor, gapStyleProperty, typeOfSelf })
-  const className = getClassName({ ...props, isChildrenRow, isChildrenCol })
+  const className = getClassName({
+    ...props,
+    isChildrenRow,
+    isChildrenCol,
+    typeOfSelf,
+  })
   const children = getDecoratedChildren({ ...props, typeOfSelf, isLeaf })
   const onScroll = props.onScroll
 
