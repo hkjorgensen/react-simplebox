@@ -31,13 +31,13 @@
     "build"
   ],
   "scripts": {
-    "start": "webpack --watch --mode development --config config/webpack.config.js",
+    "start": "webpack-dev-server --mode development --config config/webpack.examples.config.js",
     "build": "npm run build:clean && npm run build:js && npm run build:css",
     "build:clean": "rm -rf build; mkdir build",
     "build:js": "webpack --mode production --config config/webpack.config.js",
     "build:css": "cp src/styles.css build/styles.css",
-    "eslint": "eslint '{src,test,config}/**/*.js'",
-    "prettier": "prettier --write '{src,test,config}/**/*.js'",
+    "eslint": "eslint '{src,test,config,examples}/**/*.js'",
+    "prettier": "prettier --write '{src,test,config,examples}/**/*.js'",
     "prettier:test": "prettier --list-different '{src,test,config}/**/*.js' || { echo ^ These files need to be prettier: npm run prettier; exit 1; }",
     "test": "npm run prettier:test && npm run eslint && npm run jest",
     "jest": "jest --config config/jest.config.js",
@@ -66,7 +66,10 @@
     "jest-image-snapshot": "^2.3.0",
     "np": "^2.18.3",
     "prettier": "^1.9.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "webpack": "^4.0.1",
-    "webpack-cli": "^2.0.9"
+    "webpack-cli": "^2.0.9",
+    "webpack-dev-server": "^3.1.0"
   }
 }
