@@ -2,7 +2,7 @@ const path = require('path')
 const fs = require('fs')
 const fourZeroFourHtml = (page, pages) => `
 <html>
-  <head>    
+  <head>
     <title>Page not found</title>
   </head>
   <body>
@@ -10,13 +10,39 @@ const fourZeroFourHtml = (page, pages) => `
     <p>Try one of the valid pages:</p>
     <ul>
       ${Object.keys(pages)
-        .map(page => `<li><a href="/${page}">${page}</a></li>`)
+        .map(page => `<li><a href="/examples/${page}">${page}</a></li>`)
         .join('\n')}
     </ul>
   </body>
 </html>
 `
-const indexHtml = ({ title, jsSource }) => `
+
+const indexHtml = ({ pages }) => `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>react-simplebox</title>
+  <style>
+    html { box-sizing: border-box; }
+    *, *:before, *:after { box-sizing: inherit; }
+    body { font-family: sans-serif; margin: 0; }
+  </style>
+</head>
+<body>
+  <p>Try one of the examples:</p>
+  <ul>
+    ${Object.keys(pages)
+      .map(page => `<li><a href="/examples/${page}">${page}</a></li>`)
+      .join('\n')}
+  </ul>
+</body>
+</html>
+`
+
+const pageHtml = ({ title, jsSource }) => `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +59,7 @@ const indexHtml = ({ title, jsSource }) => `
 </head>
 <body>
   <div id="root"></div>
-  <script src="${jsSource}"></script>
+  <script src="/${jsSource}"></script>
 </body>
 </html>
 `
@@ -51,6 +77,11 @@ const before = app => {
     res.sendFile(path.join(__dirname, '..', 'src', 'styles.css'))
   })
 
+  app.get('/', (req, res) => {
+    const html = indexHtml({ pages })
+    res.send(html)
+  })
+
   app.get('*', (req, res, next) => {
     // js files are handled by webpack-dev-server
     if (/\.js$/.test(req.path)) {
@@ -58,14 +89,14 @@ const before = app => {
       return
     }
 
-    const page = req.path.replace('/', '')
+    const page = req.path.replace('/examples/', '')
 
     if (!pages[page]) {
       res.status(404).send(fourZeroFourHtml(page, pages))
       return
     }
 
-    const html = indexHtml({
+    const html = pageHtml({
       title: `Example: ${page}`,
       jsSource: `${page}.js`,
     })
@@ -87,7 +118,7 @@ module.exports = {
     ],
   },
   devServer: {
-    contentBase: path.join(__dirname, '..', 'tmp'),
+    contentBase: path.join(__dirname, '..', 'examples'),
     compress: true,
     port: 8000,
     before: before,
