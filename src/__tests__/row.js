@@ -8,7 +8,7 @@ beforeEach(async () => {
   page = await browser.newPage()
   page.setViewport({
     width: 800,
-    height: 600
+    height: 600,
   })
 })
 
