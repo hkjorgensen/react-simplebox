@@ -2,7 +2,7 @@ const path = require('path')
 const fs = require('fs')
 const fourZeroFourHtml = (page, pages) => `
 <html>
-  <head>
+  <head>    
     <title>Page not found</title>
   </head>
   <body>
@@ -24,6 +24,11 @@ const indexHtml = ({ title, jsSource }) => `
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>${title}</title>
+  <style>
+    html { box-sizing: border-box; }
+    *, *:before, *:after { box-sizing: inherit; }
+    body { font-family: sans-serif; margin: 0; }
+  </style>
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
