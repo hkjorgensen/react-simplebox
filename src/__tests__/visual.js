@@ -16,15 +16,22 @@ afterAll(async () => {
   browser.close()
 })
 
-test('Row', async () => {
+test('row', async () => {
   await page.goto('http://localhost:8000/examples/row')
   const screenshot = await page.screenshot()
 
   expect(screenshot).toMatchImageSnapshot()
 })
 
-test('iOS', async () => {
+test('ios', async () => {
   await page.goto('http://localhost:8000/examples/ios')
+  const screenshot = await page.screenshot()
+
+  expect(screenshot).toMatchImageSnapshot()
+})
+
+test('fibonacci', async () => {
+  await page.goto('http://localhost:8000/examples/fibonacci')
   const screenshot = await page.screenshot()
 
   expect(screenshot).toMatchImageSnapshot()
