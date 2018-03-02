@@ -35,3 +35,6 @@ typings/
 
 # dotenv environment variables file
 .env
+
+# Jest image snapshot diff
+__diff_output__/
