@@ -23,6 +23,13 @@ test('row', async () => {
   expect(screenshot).toMatchImageSnapshot()
 })
 
+test('col', async () => {
+  await page.goto('http://localhost:8000/examples/col')
+  const screenshot = await page.screenshot()
+
+  expect(screenshot).toMatchImageSnapshot()
+})
+
 test('ios', async () => {
   await page.goto('http://localhost:8000/examples/ios')
   const screenshot = await page.screenshot()
