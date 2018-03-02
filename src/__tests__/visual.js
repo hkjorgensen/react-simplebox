@@ -3,7 +3,7 @@ let page, browser
 
 const DEBUG = false
 
-beforeEach(async () => {
+beforeAll(async () => {
   browser = await puppeteer.launch({ headless: !DEBUG })
   page = await browser.newPage()
   page.setViewport({
@@ -12,7 +12,7 @@ beforeEach(async () => {
   })
 })
 
-afterEach(async () => {
+afterAll(async () => {
   browser.close()
 })
 
