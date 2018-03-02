@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { Grid, Row, Col} from '../src/index'
+import { Grid, Row, Col } from '../src/index'
 
 const styles = {
   header: {
@@ -9,33 +9,39 @@ const styles = {
     justify: 'space-between',
     paddingStart: 16,
     paddingEnd: 16,
-    boxStyle: { borderBottom: '1px solid #eaeaea' }
+    boxStyle: { borderBottom: '1px solid #eaeaea' },
   },
   footer: {
     size: 64,
-    boxStyle: { borderTop: '1px solid #eaeaea' }
+    boxStyle: { borderTop: '1px solid #eaeaea' },
   },
   listItem: {
     size: 128,
     paddingStart: 16,
     paddingEnd: 16,
-    boxStyle: { backgroundColor: 'lightgrey' }
+    boxStyle: { backgroundColor: 'lightgrey' },
   },
   menu: {
     justify: 'center',
-    align: 'center'
-  }
+    align: 'center',
+  },
 }
 
 const App = () => (
   <div style={{ height: '100vh', display: 'flex' }}>
     <Grid>
       <Row {...styles.header}>
-        <Col><a href="#">Back</a></Col>
-        <Col><h1>Title</h1></Col>
-        <Col><a href="#">Save</a></Col>
+        <Col>
+          <a href="#">Back</a>
+        </Col>
+        <Col>
+          <h1>Title</h1>
+        </Col>
+        <Col>
+          <a href="#">Save</a>
+        </Col>
       </Row>
-      <Row scroll='vertical' gap={16}>
+      <Row scroll="vertical" gap={16}>
         <Row {...styles.listItem}>1</Row>
         <Row {...styles.listItem}>2</Row>
         <Row {...styles.listItem}>3</Row>
