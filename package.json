@@ -41,6 +41,7 @@
     "prettier:test": "prettier --list-different '{src,test,config}/**/*.js' || { echo ^ These files need to be prettier: npm run prettier; exit 1; }",
     "test": "npm run prettier:test && npm run eslint && npm run jest",
     "jest": "jest --config config/jest.config.js",
+    "jest:update": "jest --updateSnapshot --config config/jest.config.js",
     "test:watch": "jest --watch --config config/jest.config.js",
     "release": "npm run build && np --no-publish"
   },

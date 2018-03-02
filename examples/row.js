@@ -5,11 +5,11 @@ import { Grid, Row } from '../src/index'
 const App = () => (
   <div style={{ minHeight: '100vh', display: 'flex' }}>
     <Grid>
-      <Row size={48} boxStyle={{ background: 'tomato' }}>
+      <Row size={48} boxStyle={{ backgroundColor: 'tomato' }}>
         Header
       </Row>
-      <Row boxStyle={{ background: 'steelblue' }}>Content</Row>
-      <Row size={48} boxStyle={{ background: 'tomato' }}>
+      <Row boxStyle={{ backgroundColor: 'steelblue' }}>Content</Row>
+      <Row size={48} boxStyle={{ backgroundColor: 'tomato' }}>
         Footer
       </Row>
     </Grid>
