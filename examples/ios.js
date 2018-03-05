@@ -29,7 +29,7 @@ const styles = {
 
 const App = () => (
   <div style={{ height: '100vh', display: 'flex' }}>
-    <Grid height="block">
+    <Grid height="fill">
       <Row {...styles.header}>
         <Col>
           <a href="#">Back</a>

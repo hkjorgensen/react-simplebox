@@ -40,9 +40,9 @@ const App = () => {
 
       <hr />
 
-      <h1>Height = block, width = block</h1>
+      <h1>Height = fill, width = fill</h1>
       <div style={styleFixedViewport}>
-        <Grid height="block" width="block">
+        <Grid height="fill" width="fill">
           <Col>
             <Row {...styles.maastrichtBlue}>One</Row>
             <Row {...styles.darkSkyBlue}>Two</Row>
@@ -56,9 +56,9 @@ const App = () => {
 
       <hr />
 
-      <h1>Height = block, width = block, with vertical scroll</h1>
+      <h1>Height = fill, width = fill, with vertical scroll</h1>
       <div style={maxHeight}>
-        <Grid height="block">
+        <Grid height="fill">
           <Row scroll="vertical">
             <Row size={20} {...styles.maastrichtBlue}>
               One
@@ -81,9 +81,9 @@ const App = () => {
 
       <hr />
 
-      <h1>Height = block, width = block, with horizontal scroll</h1>
+      <h1>Height = fill, width = fill, with horizontal scroll</h1>
       <div style={styleFixedViewport}>
-        <Grid height="block" width="block">
+        <Grid height="fill" width="fill">
           <Row scroll="horizontal">
             <Col size={170} {...styles.maastrichtBlue}>
               One

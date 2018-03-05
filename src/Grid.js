@@ -10,7 +10,7 @@ import {
   ROW,
   COL,
   FIT,
-  BLOCK,
+  FILL,
   DEBUG_OUTLINE,
   DEBUG_BACKGROUND,
   STYLE_RELATIVE,
@@ -100,13 +100,13 @@ Grid.propTypes = {
   debugType: PropTypes.oneOf([DEBUG_OUTLINE, DEBUG_BACKGROUND]),
   gap: PropTypes.number,
   className: PropTypes.string,
-  height: PropTypes.oneOf([BLOCK, FIT]),
-  width: PropTypes.oneOf([BLOCK, FIT]),
+  height: PropTypes.oneOf([FILL, FIT]),
+  width: PropTypes.oneOf([FILL, FIT]),
 }
 
 Grid.defaultProps = {
   height: FIT,
-  width: BLOCK,
+  width: FILL,
   gridSize: 8,
   gridHelper: null,
   forceGridSize: false,

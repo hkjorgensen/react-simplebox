@@ -21,7 +21,7 @@ class App extends Component {
   render() {
     return (
       <div style={{ height: '100vh', width: '100vw', display: 'flex' }}>
-        <Grid debug height='block'>
+        <Grid debug height='fill'>
           <Row>First</Row>
           <Row>
             <Col>Second</Col>
@@ -51,8 +51,8 @@ react-simplebox depends on [react](https://www.npmjs.com/package/react) and [rea
 - `debug` (bool) default: `false` - enable debug helpers
 - `debugType` (string) default: `background` - toggle childrens debug layout with one of: "background" or "outline"
 - `gridHelper` (string) default: `null` - toggle background grid with one of: "baseline", "baseline2", "modular", "modular2"
-- `height` (string) default: `fit` - toggle between block or inline mode with one of: "block" or "fit"
-- `width` (string) default: `block` - toggle between block or inline mode with one of: "block" or "fit"
+- `height` (string) default: `fit` - toggle between block or inline mode with one of: "fill" or "fit"
+- `width` (string) default: `fill` - toggle between block or inline mode with one of: "fill" or "fit"
 
 ### `Row` & `Col`
 - `size` (number|string) default: `0` - define the size of element use a number or string `fit`.

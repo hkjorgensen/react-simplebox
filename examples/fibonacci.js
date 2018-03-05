@@ -43,7 +43,7 @@ const App = () => (
       gridSize={GRID_SIZE}
       forceGridSize
       gridHelper="modular"
-      height="block"
+      height="fill"
     >
       <Col size={21} align="center" justify="center" {...styles.one}>
         21
