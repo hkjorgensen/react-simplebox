@@ -39,7 +39,12 @@ const App = () => (
       display: 'flex',
     }}
   >
-    <Grid gridSize={GRID_SIZE} forceGridSize gridHelper="modular" height="block">
+    <Grid
+      gridSize={GRID_SIZE}
+      forceGridSize
+      gridHelper="modular"
+      height="block"
+    >
       <Col size={21} align="center" justify="center" {...styles.one}>
         21
       </Col>

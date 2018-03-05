@@ -46,7 +46,7 @@ class Grid extends Component {
       forceGridSize,
       gridSize,
       height,
-      width
+      width,
     } = this.props
     const flow = isChildrenOfType(Row, children) ? ROW : COL
     const isParentRowAndFit = height === FIT
@@ -62,7 +62,7 @@ class Grid extends Component {
       justify: null,
       flow,
       isParentRowAndFit,
-      isParentColAndFit
+      isParentColAndFit,
     }
 
     const firstConfig = getConfig({ ...base, isFirst: true })
@@ -101,7 +101,7 @@ Grid.propTypes = {
   gap: PropTypes.number,
   className: PropTypes.string,
   height: PropTypes.oneOf([BLOCK, FIT]),
-  width: PropTypes.oneOf([BLOCK, FIT])
+  width: PropTypes.oneOf([BLOCK, FIT]),
 }
 
 Grid.defaultProps = {
