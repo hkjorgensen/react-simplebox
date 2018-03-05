@@ -9,6 +9,8 @@ import {
   RTL,
   ROW,
   COL,
+  FIT,
+  BLOCK,
   DEBUG_OUTLINE,
   DEBUG_BACKGROUND,
   STYLE_RELATIVE,
@@ -43,7 +45,13 @@ class Grid extends Component {
       gap,
       forceGridSize,
       gridSize,
+      height,
+      width
     } = this.props
+    const flow = isChildrenOfType(Row, children) ? ROW : COL
+    const isParentRowAndFit = height === FIT
+    const isParentColAndFit = width === FIT
+
     const base = {
       dir,
       debug,
@@ -52,7 +60,9 @@ class Grid extends Component {
       forceGridSize,
       gridSize,
       justify: null,
-      flow: isChildrenOfType(Row, children) ? ROW : COL,
+      flow,
+      isParentRowAndFit,
+      isParentColAndFit
     }
 
     const firstConfig = getConfig({ ...base, isFirst: true })
@@ -90,9 +100,13 @@ Grid.propTypes = {
   debugType: PropTypes.oneOf([DEBUG_OUTLINE, DEBUG_BACKGROUND]),
   gap: PropTypes.number,
   className: PropTypes.string,
+  height: PropTypes.oneOf([BLOCK, FIT]),
+  width: PropTypes.oneOf([BLOCK, FIT])
 }
 
 Grid.defaultProps = {
+  height: FIT,
+  width: BLOCK,
   gridSize: 8,
   gridHelper: null,
   forceGridSize: false,
