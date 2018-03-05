@@ -1,14 +1,14 @@
 import puppeteer from 'puppeteer'
 let page, browser
 
-const DEBUG = false
+const DEBUG = true
 
 beforeAll(async () => {
   browser = await puppeteer.launch({ headless: !DEBUG })
   page = await browser.newPage()
   page.setViewport({
-    width: 800,
-    height: 600,
+    width: 1024,
+    height: 768,
   })
 })
 
@@ -25,6 +25,13 @@ test('row', async () => {
 
 test('col', async () => {
   await page.goto('http://localhost:8000/examples/col')
+  const screenshot = await page.screenshot()
+
+  expect(screenshot).toMatchImageSnapshot()
+})
+
+test('viewport', async () => {
+  await page.goto('http://localhost:8000/examples/viewport')
   const screenshot = await page.screenshot()
 
   expect(screenshot).toMatchImageSnapshot()

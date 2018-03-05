@@ -26,7 +26,7 @@ const styles = {
 
 const App = () => (
   <div style={{ height: '100vh', display: 'flex' }}>
-    <Grid>
+    <Grid height="block">
       <Col size={48} {...styles.blue}>
         Fixed
       </Col>
