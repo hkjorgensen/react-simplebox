@@ -30,20 +30,7 @@ import {
   STYLE_SCROLL_HORIZONTAL,
 } from './constants'
 
-const getClassName = ({
-  isChildrenCol,
-  size,
-  justify,
-  relative,
-  align,
-  config,
-  scroll,
-  typeOfSelf,
-}) => {
-  const classNames = [STYLE_FLEX]
-
-  classNames.push(isChildrenCol ? STYLE_FLEX_ROW : STYLE_FLEX_COLUMN)
-
+const setStyleFlexClassName = (typeOfSelf, classNames, size, config) => {
   if (
     size ||
     config.justify !== null ||
@@ -59,39 +46,9 @@ const getClassName = ({
       classNames.push(STYLE_FLEX_GROW)
     }
   }
+}
 
-  if (relative) {
-    classNames.push(STYLE_RELATIVE)
-  }
-
-  if (justify === SPACE_BETWEEN) {
-    classNames.push(STYLE_FLEX_JUSTIFY_BETWEEN)
-  }
-
-  if (justify === START) {
-    classNames.push(STYLE_FLEX_JUSTIFY_START)
-  }
-
-  if (justify === CENTER) {
-    classNames.push(STYLE_FLEX_JUSTIFY_CENTER)
-  }
-
-  if (justify === END) {
-    classNames.push(STYLE_FLEX_JUSTIFY_END)
-  }
-
-  if (align === TOP) {
-    classNames.push(STYLE_FLEX_ALIGN_TOP)
-  }
-
-  if (align === CENTER) {
-    classNames.push(STYLE_FLEX_ALIGN_CENTER)
-  }
-
-  if (align === BOTTOM) {
-    classNames.push(STYLE_FLEX_ALIGN_BOTTOM)
-  }
-
+const setScrollClassName = (typeOfSelf, classNames, scroll) => {
   if (scroll !== null) {
     classNames.push(STYLE_SCROLL)
 
@@ -107,6 +64,70 @@ const getClassName = ({
       classNames.push(STYLE_SCROLL_HORIZONTAL)
     }
   }
+}
+
+const setRelativeClassName = (typeOfSelf, classNames, relative) => {
+  if (relative) {
+    classNames.push(STYLE_RELATIVE)
+  }
+}
+
+const setJustifyClassName = (typeOfSelf, classNames, justify) => {
+  if (justify === SPACE_BETWEEN) {
+    classNames.push(STYLE_FLEX_JUSTIFY_BETWEEN)
+  }
+
+  if (justify === START) {
+    classNames.push(STYLE_FLEX_JUSTIFY_START)
+  }
+
+  if (justify === CENTER) {
+    classNames.push(STYLE_FLEX_JUSTIFY_CENTER)
+  }
+
+  if (justify === END) {
+    classNames.push(STYLE_FLEX_JUSTIFY_END)
+  }
+}
+
+const setAlignClassName = (typeOfSelf, classNames, align) => {
+  if (typeOfSelf == COL) return
+
+  if (align === TOP) {
+    classNames.push(STYLE_FLEX_ALIGN_TOP)
+  }
+
+  if (align === CENTER) {
+    classNames.push(STYLE_FLEX_ALIGN_CENTER)
+  }
+
+  if (align === BOTTOM) {
+    classNames.push(STYLE_FLEX_ALIGN_BOTTOM)
+  }
+}
+
+const setChildrenColClassName = (typeOfSelf, classNames, isChildrenCol) => {
+  classNames.push(isChildrenCol ? STYLE_FLEX_ROW : STYLE_FLEX_COLUMN)
+}
+
+const getClassName = ({
+  isChildrenCol,
+  size,
+  justify,
+  relative,
+  align,
+  config,
+  scroll,
+  typeOfSelf,
+}) => {
+  const classNames = [STYLE_FLEX]
+
+  setChildrenColClassName(typeOfSelf, classNames, isChildrenCol)
+  setStyleFlexClassName(typeOfSelf, classNames, size, config)
+  setRelativeClassName(typeOfSelf, classNames, relative)
+  setJustifyClassName(typeOfSelf, classNames, justify)
+  setAlignClassName(typeOfSelf, classNames, align)
+  setScrollClassName(typeOfSelf, classNames, scroll)
 
   return classNames.join(' ')
 }
