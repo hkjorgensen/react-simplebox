@@ -17,7 +17,7 @@ const App = () => {
   const styles = {
     maastrichtBlue: { boxStyle: { backgroundColor: 'rgba(0,11,51,0.8)' } },
     darkSkyBlue: { boxStyle: { backgroundColor: 'rgba(149,188,214, 0.8)' } },
-    catalineBlue: { boxStyle: { backgroundColor: 'rgba(0,43,127, 0.8)' } },
+    catalineBlue: { boxStyle: { backgroundColor: 'rgba(0,0,0, 0.8)' } },
     steelBlue: { boxStyle: { backgroundColor: 'rgba(62,120,178, 0.8)' } },
     appleGreen: { boxStyle: { backgroundColor: 'rgba(123,168,0, 0.8)' } },
   }

@@ -52,7 +52,7 @@ const pageHtml = ({ title, jsSource }) => `
   <title>${title}</title>
   <style>
     html { box-sizing: border-box; }
-    *, *:before, *:after { box-sizing: inherit; }
+    *, *:before, *:after { box-sizing: inherit; color: black; }
     body { font-family: sans-serif; margin: 0; }
   </style>
   <link rel="stylesheet" href="/styles.css">
