@@ -58,8 +58,16 @@
   justify-content: flex-end;
 }
 
+.SB-flex-align-top {
+  align-items: flex-start;
+}
+
 .SB-flex-align-center {
   align-items: center;
+}
+
+.SB-flex-align-bottom {
+  align-items: flex-end;
 }
 
 .SB-flex-space-between {

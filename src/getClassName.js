@@ -5,6 +5,8 @@ import {
   START,
   CENTER,
   END,
+  TOP,
+  BOTTOM,
   BOTH,
   VERTICAL,
   HORIZONTAL,
@@ -19,7 +21,9 @@ import {
   STYLE_FLEX_JUSTIFY_START,
   STYLE_FLEX_JUSTIFY_CENTER,
   STYLE_FLEX_JUSTIFY_END,
+  STYLE_FLEX_ALIGN_TOP,
   STYLE_FLEX_ALIGN_CENTER,
+  STYLE_FLEX_ALIGN_BOTTOM,
   STYLE_SCROLL,
   STYLE_SCROLL_BOTH,
   STYLE_SCROLL_VERTICAL,
@@ -76,8 +80,16 @@ const getClassName = ({
     classNames.push(STYLE_FLEX_JUSTIFY_END)
   }
 
+  if (align === TOP) {
+    classNames.push(STYLE_FLEX_ALIGN_TOP)
+  }
+
   if (align === CENTER) {
     classNames.push(STYLE_FLEX_ALIGN_CENTER)
+  }
+
+  if (align === BOTTOM) {
+    classNames.push(STYLE_FLEX_ALIGN_BOTTOM)
   }
 
   if (scroll !== null) {

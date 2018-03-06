@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { Grid, Row } from '../src/index'
+import { Grid, Row, Col } from '../src/index'
 
 const styles = {
   blue: {
@@ -57,6 +57,15 @@ const App = () => (
       <Row {...styles.skin}>Grow with available space</Row>
       <Row size={48} {...styles.blue}>
         Fixed
+      </Row>
+      <Row size={48} align="top" {...styles.yellow}>
+        <Col>Row align top</Col>
+      </Row>
+      <Row size={48} align="center" {...styles.orange}>
+        <Col>Row align center</Col>
+      </Row>
+      <Row size={48} align="bottom" {...styles.skin}>
+        <Col>Row align bottom</Col>
       </Row>
     </Grid>
   </div>
