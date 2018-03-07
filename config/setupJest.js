@@ -1,4 +1,6 @@
 /* global expect */
 import { configureToMatchImageSnapshot } from 'jest-image-snapshot'
-const toMatchImageSnapshot = configureToMatchImageSnapshot({ customDiffConfig: { threshold: 0.1 } })
+const toMatchImageSnapshot = configureToMatchImageSnapshot({
+  customDiffConfig: { threshold: 0.1 },
+})
 expect.extend({ toMatchImageSnapshot })

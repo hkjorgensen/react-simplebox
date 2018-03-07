@@ -30,7 +30,13 @@ import {
   STYLE_SCROLL_HORIZONTAL,
 } from './constants'
 
-const setStyleFlexClassName = (typeOfSelf, classNames, size, config, scroll) => {
+const setStyleFlexClassName = (
+  typeOfSelf,
+  classNames,
+  size,
+  config,
+  scroll
+) => {
   if (
     size ||
     config.justify !== null ||
