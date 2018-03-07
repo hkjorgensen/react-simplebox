@@ -27,6 +27,18 @@ const styles = {
 const App = () => (
   <div style={{ height: '100vh', display: 'flex' }}>
     <Grid height="fill">
+      <Col size={48} {...styles.blue} align="bottom">
+        Align has no effect
+      </Col>
+      <Col size={48} {...styles.blue} align="bottom" justify="start">
+        Justify start
+      </Col>
+      <Col size={48} {...styles.blue} align="bottom" justify="center">
+        Justify center
+      </Col>
+      <Col size={48} {...styles.blue} align="bottom" justify="end">
+        Justify end
+      </Col>
       <Col size={48} {...styles.blue}>
         Fixed
       </Col>

@@ -5,6 +5,8 @@ import {
   START,
   CENTER,
   END,
+  TOP,
+  BOTTOM,
   BOTH,
   VERTICAL,
   HORIZONTAL,
@@ -19,27 +21,16 @@ import {
   STYLE_FLEX_JUSTIFY_START,
   STYLE_FLEX_JUSTIFY_CENTER,
   STYLE_FLEX_JUSTIFY_END,
+  STYLE_FLEX_ALIGN_TOP,
   STYLE_FLEX_ALIGN_CENTER,
+  STYLE_FLEX_ALIGN_BOTTOM,
   STYLE_SCROLL,
   STYLE_SCROLL_BOTH,
   STYLE_SCROLL_VERTICAL,
   STYLE_SCROLL_HORIZONTAL,
 } from './constants'
 
-const getClassName = ({
-  isChildrenCol,
-  size,
-  justify,
-  relative,
-  align,
-  config,
-  scroll,
-  typeOfSelf,
-}) => {
-  const classNames = [STYLE_FLEX]
-
-  classNames.push(isChildrenCol ? STYLE_FLEX_ROW : STYLE_FLEX_COLUMN)
-
+const setStyleFlexClassName = (typeOfSelf, classNames, size, config, scroll) => {
   if (
     size ||
     config.justify !== null ||
@@ -55,31 +46,9 @@ const getClassName = ({
       classNames.push(STYLE_FLEX_GROW)
     }
   }
+}
 
-  if (relative) {
-    classNames.push(STYLE_RELATIVE)
-  }
-
-  if (justify === SPACE_BETWEEN) {
-    classNames.push(STYLE_FLEX_JUSTIFY_BETWEEN)
-  }
-
-  if (justify === START) {
-    classNames.push(STYLE_FLEX_JUSTIFY_START)
-  }
-
-  if (justify === CENTER) {
-    classNames.push(STYLE_FLEX_JUSTIFY_CENTER)
-  }
-
-  if (justify === END) {
-    classNames.push(STYLE_FLEX_JUSTIFY_END)
-  }
-
-  if (align === CENTER) {
-    classNames.push(STYLE_FLEX_ALIGN_CENTER)
-  }
-
+const setScrollClassName = (typeOfSelf, classNames, scroll) => {
   if (scroll !== null) {
     classNames.push(STYLE_SCROLL)
 
@@ -95,6 +64,70 @@ const getClassName = ({
       classNames.push(STYLE_SCROLL_HORIZONTAL)
     }
   }
+}
+
+const setRelativeClassName = (typeOfSelf, classNames, relative) => {
+  if (relative) {
+    classNames.push(STYLE_RELATIVE)
+  }
+}
+
+const setJustifyClassName = (typeOfSelf, classNames, justify) => {
+  if (justify === SPACE_BETWEEN) {
+    classNames.push(STYLE_FLEX_JUSTIFY_BETWEEN)
+  }
+
+  if (justify === START) {
+    classNames.push(STYLE_FLEX_JUSTIFY_START)
+  }
+
+  if (justify === CENTER) {
+    classNames.push(STYLE_FLEX_JUSTIFY_CENTER)
+  }
+
+  if (justify === END) {
+    classNames.push(STYLE_FLEX_JUSTIFY_END)
+  }
+}
+
+const setAlignClassName = (typeOfSelf, classNames, align) => {
+  if (typeOfSelf == COL && align !== CENTER) return
+
+  if (align === TOP) {
+    classNames.push(STYLE_FLEX_ALIGN_TOP)
+  }
+
+  if (align === CENTER) {
+    classNames.push(STYLE_FLEX_ALIGN_CENTER)
+  }
+
+  if (align === BOTTOM) {
+    classNames.push(STYLE_FLEX_ALIGN_BOTTOM)
+  }
+}
+
+const setChildrenColClassName = (typeOfSelf, classNames, isChildrenCol) => {
+  classNames.push(isChildrenCol ? STYLE_FLEX_ROW : STYLE_FLEX_COLUMN)
+}
+
+const getClassName = ({
+  isChildrenCol,
+  size,
+  justify,
+  relative,
+  align,
+  config,
+  scroll,
+  typeOfSelf,
+}) => {
+  const classNames = [STYLE_FLEX]
+
+  setChildrenColClassName(typeOfSelf, classNames, isChildrenCol)
+  setStyleFlexClassName(typeOfSelf, classNames, size, config, scroll)
+  setRelativeClassName(typeOfSelf, classNames, relative)
+  setJustifyClassName(typeOfSelf, classNames, justify)
+  setAlignClassName(typeOfSelf, classNames, align)
+  setScrollClassName(typeOfSelf, classNames, scroll)
 
   return classNames.join(' ')
 }
