@@ -58,7 +58,7 @@ react-simplebox depends on [react](https://www.npmjs.com/package/react) and [rea
 - `size` (number|string) default: `0` - define the size of element use a number or string `fit`.
 - `gap` (number) default: `null` - define the gap between children.
 - `justify` (string) default: `null` - define how to justify children with one of "start", "center", "end" or "space-between".
-- `align` (string) default: `null` - define how to align children according to the Y-axis. Allowed value is one of: "top", "center" or "bottom".
+- `align` (string) default: `null` - define how to align children according to the Y-axis. Allowed values are: `top`, `bottom` and `center` for `Row` and `center` for `Col`.
 - `relative` (bool) default: `false` - mark the element as relative to the children.
 - `paddingStart` (number) default: `null`
 - `paddingEnd` (number) default: `null`
