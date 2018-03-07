@@ -91,7 +91,7 @@ const setJustifyClassName = (typeOfSelf, classNames, justify) => {
 }
 
 const setAlignClassName = (typeOfSelf, classNames, align) => {
-  if (typeOfSelf == COL) return
+  if (typeOfSelf == COL && align !== CENTER) return
 
   if (align === TOP) {
     classNames.push(STYLE_FLEX_ALIGN_TOP)
