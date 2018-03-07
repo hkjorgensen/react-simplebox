@@ -30,7 +30,7 @@ import {
   STYLE_SCROLL_HORIZONTAL,
 } from './constants'
 
-const setStyleFlexClassName = (typeOfSelf, classNames, size, config) => {
+const setStyleFlexClassName = (typeOfSelf, classNames, size, config, scroll) => {
   if (
     size ||
     config.justify !== null ||
@@ -123,7 +123,7 @@ const getClassName = ({
   const classNames = [STYLE_FLEX]
 
   setChildrenColClassName(typeOfSelf, classNames, isChildrenCol)
-  setStyleFlexClassName(typeOfSelf, classNames, size, config)
+  setStyleFlexClassName(typeOfSelf, classNames, size, config, scroll)
   setRelativeClassName(typeOfSelf, classNames, relative)
   setJustifyClassName(typeOfSelf, classNames, justify)
   setAlignClassName(typeOfSelf, classNames, align)
