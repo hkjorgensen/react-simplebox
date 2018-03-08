@@ -40,6 +40,25 @@ const App = () => {
 
       <hr />
 
+      <h1>Height = fit, parent with flexbox</h1>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          flexBasis: 'auto',
+          flexGrow: 1,
+          flexShrink: 0,
+        }}
+      >
+        <Grid height="fit">
+          <Row {...styles.maastrichtBlue}>One</Row>
+          <Row {...styles.darkSkyBlue}>Two</Row>
+          <Row {...styles.catalineBlue}>Three</Row>
+        </Grid>
+      </div>
+
+      <hr />
+
       <h1>Height = fill, width = fill</h1>
       <div style={styleFixedViewport}>
         <Grid height="fill" width="fill">

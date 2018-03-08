@@ -7,8 +7,8 @@ beforeAll(async () => {
   browser = await puppeteer.launch({ headless: !DEBUG })
   page = await browser.newPage()
   page.setViewport({
-    width: 1024,
-    height: 768,
+    width: 1920,
+    height: 1080,
   })
 })
 
