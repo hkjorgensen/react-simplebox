@@ -16,14 +16,21 @@ import {
   STYLE_RELATIVE,
   STYLE_FLEX,
   STYLE_FLEX_GROW,
+  STYLE_FLEX_AUTO,
   STYLE_FLEX_ROW,
   STYLE_FLEX_COLUMN,
 } from './constants'
 
 class Grid extends Component {
   getClassName() {
-    const { children, className } = this.props
-    const classNames = [STYLE_RELATIVE, STYLE_FLEX, STYLE_FLEX_GROW]
+    const { children, className, height } = this.props
+    const classNames = [STYLE_RELATIVE, STYLE_FLEX]
+
+    if (height === FIT) {
+      classNames.push(STYLE_FLEX_AUTO)
+    } else {
+      classNames.push(STYLE_FLEX_GROW)
+    }
 
     classNames.push(
       isChildrenOfType(Row, children) ? STYLE_FLEX_COLUMN : STYLE_FLEX_ROW
