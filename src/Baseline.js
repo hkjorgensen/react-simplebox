@@ -67,7 +67,7 @@ const Baseline = ({ children, className, type, size, dir }) => {
   const style = type ? GRID_TYPES[type](size) : null
 
   return (
-    <div className={className} style={style} dir={dir}>
+    <div className={className} style={style} dir={dir} data-simplebox-root>
       {children}
     </div>
   )
