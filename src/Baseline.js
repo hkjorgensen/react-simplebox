@@ -63,11 +63,17 @@ const GRID_TYPES = {
   modular2,
 }
 
-const Baseline = ({ children, className, type, size, dir }) => {
+const Baseline = ({ children, className, type, size, dir, testId }) => {
   const style = type ? GRID_TYPES[type](size) : null
 
   return (
-    <div className={className} style={style} dir={dir} data-simplebox-root>
+    <div
+      className={className}
+      style={style}
+      dir={dir}
+      data-test-id={testId}
+      data-simplebox-root
+    >
       {children}
     </div>
   )
@@ -79,6 +85,7 @@ Baseline.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   type: PropTypes.oneOf(Object.keys(GRID_TYPES)),
+  testId: PropTypes.string,
 }
 
 Baseline.defaultProps = {
@@ -86,6 +93,7 @@ Baseline.defaultProps = {
   className: null,
   size: DEFAULT_SIZE,
   type: null,
+  testId: null,
 }
 
 export default Baseline
