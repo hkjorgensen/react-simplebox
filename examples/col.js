@@ -26,8 +26,8 @@ const styles = {
 
 const App = () => (
   <div style={{ height: '100vh', display: 'flex' }}>
-    <Grid height="fill">
-      <Col size={48} {...styles.blue} align="bottom">
+    <Grid height="fill" data-test-id="myGridTestId">
+      <Col size={48} {...styles.blue} align="bottom" data-test-id="myColTestId">
         Align has no effect
       </Col>
       <Col size={48} {...styles.blue} align="bottom" justify="start">
