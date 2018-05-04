@@ -91,6 +91,7 @@ class Grid extends Component {
         className={this.getClassName()}
         type={gridHelper}
         size={gridSize}
+        testId={this.props['data-test-id']}
       >
         {this.getChildrenWithProps()}
       </Baseline>

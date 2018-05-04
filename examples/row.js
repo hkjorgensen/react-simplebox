@@ -26,8 +26,8 @@ const styles = {
 
 const App = () => (
   <div style={{ height: '100vh', display: 'flex' }}>
-    <Grid height="fill">
-      <Row size={48} {...styles.blue}>
+    <Grid height="fill" data-test-id="myGridTestId">
+      <Row size={48} {...styles.blue} data-test-id="myRowTestId">
         Fixed
       </Row>
       <Row scroll="vertical" size={60}>

@@ -35,6 +35,7 @@ export const defaultProps = {
   boxStyle: null,
   scroll: null,
   onScroll: null,
+  testId: null,
 }
 
 export const propTypes = {
@@ -72,4 +73,5 @@ export const propTypes = {
   }),
   scroll: oneOf([BOTH, VERTICAL, HORIZONTAL]),
   onScroll: func,
+  testId: string,
 }

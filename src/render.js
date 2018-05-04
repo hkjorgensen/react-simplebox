@@ -21,9 +21,15 @@ const render = ({
   })
   const children = getDecoratedChildren({ ...props, typeOfSelf, isLeaf })
   const onScroll = props.onScroll
+  const testId = props['data-test-id']
 
   return (
-    <div style={style} className={className} onScroll={onScroll}>
+    <div
+      style={style}
+      className={className}
+      onScroll={onScroll}
+      data-test-id={testId}
+    >
       {children}
     </div>
   )
