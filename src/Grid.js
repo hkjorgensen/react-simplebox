@@ -23,8 +23,12 @@ import {
 
 class Grid extends Component {
   getClassName() {
-    const { children, className, height } = this.props
-    const classNames = [STYLE_RELATIVE, STYLE_FLEX]
+    const { children, className, height, relative } = this.props
+    const classNames = [STYLE_FLEX]
+
+    if (relative) {
+      classNames.push(STYLE_RELATIVE)
+    }
 
     if (height === FIT) {
       classNames.push(STYLE_FLEX_AUTO)
@@ -100,29 +104,31 @@ class Grid extends Component {
 }
 
 Grid.propTypes = {
-  gridSize: PropTypes.number,
-  gridHelper: PropTypes.oneOf(['baseline', 'baseline2', 'modular', 'modular2']),
-  forceGridSize: PropTypes.bool,
-  dir: PropTypes.oneOf([LTR, RTL]),
+  className: PropTypes.string,
   debug: PropTypes.bool,
   debugType: PropTypes.oneOf([DEBUG_OUTLINE, DEBUG_BACKGROUND]),
+  dir: PropTypes.oneOf([LTR, RTL]),
+  forceGridSize: PropTypes.bool,
   gap: PropTypes.number,
-  className: PropTypes.string,
+  gridHelper: PropTypes.oneOf(['baseline', 'baseline2', 'modular', 'modular2']),
+  gridSize: PropTypes.number,
   height: PropTypes.oneOf([FILL, FIT]),
+  relative: PropTypes.bool,
   width: PropTypes.oneOf([FILL, FIT]),
 }
 
 Grid.defaultProps = {
-  height: FIT,
-  width: FILL,
-  gridSize: 8,
-  gridHelper: null,
-  forceGridSize: false,
-  dir: LTR,
+  className: null,
   debug: false,
   debugType: 'background',
+  dir: LTR,
+  forceGridSize: false,
   gap: null,
-  className: null,
+  gridHelper: null,
+  gridSize: 8,
+  height: FIT,
+  relative: false,
+  width: FILL,
 }
 
 export default Grid
